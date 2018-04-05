@@ -9,6 +9,7 @@
  * --------------------------------------------------------------------------------
  * The MIT License (MIT)
  *
+ * Copyright (c) 2014-2015 Ignatius Steven (https://github.com/isteven)
  * Copyright (c) 2018 Marc Khoury (https://github.com/koganei)
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy 

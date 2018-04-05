@@ -1,3 +1,9 @@
+### v4.1.0
+##### Added / Updated
+- You can now use the `attach-keyboard-listener-to-element` attribute to toggle keydown event attachment between the document (default) and the directive's element in order to prevent keydown event propagation beyond the directive.   
+
+## In original fork:
+
 ### v4.0.0
 ##### Added / Updated
 - You can now customize output-model properties that you need, instead of having all data.
