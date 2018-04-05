@@ -3,13 +3,13 @@
  * Creates a dropdown-like button with checkboxes. 
  *
  * Project started on: Tue, 14 Jan 2014 - 5:18:02 PM
- * Current version: 4.0.0
+ * Current version: 4.1.0
  * 
  * Released under the MIT License
  * --------------------------------------------------------------------------------
  * The MIT License (MIT)
  *
- * Copyright (c) 2014 Ignatius Steven (https://github.com/isteven)
+ * Copyright (c) 2018 Marc Khoury (https://github.com/koganei)
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy 
  * of this software and associated documentation files (the "Software"), to deal 
@@ -46,6 +46,7 @@ angular.module( 'isteven-multi-select', ['ng'] ).directive( 'istevenMultiSelect'
 
             // settings based on attribute
             isDisabled      : '=',
+            attachKeyboardListenerToElement: '=',
 
             // callbacks
             onClear         : '&',  
@@ -601,7 +602,7 @@ angular.module( 'isteven-multi-select', ['ng'] ).directive( 'istevenMultiSelect'
 
                 // Just to make sure.. had a bug where key events were recorded twice
                 angular.element( document ).off( 'click', $scope.externalClickListener );
-                angular.element( document ).off( 'keydown', $scope.keyboardListener );        
+                angular.element( $scope.attachKeyboardListenerToElement ? element : document ).off( 'keydown', $scope.keyboardListener );        
 
                 // The idea below was taken from another multi-select directive - https://github.com/amitava82/angular-multiselect 
                 // His version is awesome if you need a more simple multi-select approach.                                
@@ -612,7 +613,7 @@ angular.module( 'isteven-multi-select', ['ng'] ).directive( 'istevenMultiSelect'
                     angular.element( checkBoxLayer ).removeClass( 'show' );                    
                     angular.element( clickedEl ).removeClass( 'buttonClicked' );                    
                     angular.element( document ).off( 'click', $scope.externalClickListener );
-                    angular.element( document ).off( 'keydown', $scope.keyboardListener );                                    
+                    angular.element( $scope.attachKeyboardListenerToElement ? element : document ).off( 'keydown', $scope.keyboardListener );                                    
 
                     // clear the focused element;
                     $scope.removeFocusStyle( $scope.tabIndex );
@@ -644,7 +645,7 @@ angular.module( 'isteven-multi-select', ['ng'] ).directive( 'istevenMultiSelect'
                     // Attach change event listener on the input filter. 
                     // We need this because ng-change is apparently not an event listener.                    
                     angular.element( document ).on( 'click', $scope.externalClickListener );
-                    angular.element( document ).on( 'keydown', $scope.keyboardListener );  
+                    angular.element( $scope.attachKeyboardListenerToElement ? element : document ).on( 'keydown', $scope.keyboardListener );  
 
                     // to get the initial tab index, depending on how many helper elements we have. 
                     // priority is to always focus it on the input filter                                                                
@@ -698,7 +699,7 @@ angular.module( 'isteven-multi-select', ['ng'] ).directive( 'istevenMultiSelect'
                 angular.element( checkBoxLayer.previousSibling ).removeClass( 'buttonClicked' );                    
                 angular.element( checkBoxLayer ).removeClass( 'show' );
                 angular.element( document ).off( 'click', $scope.externalClickListener ); 
-                angular.element( document ).off( 'keydown', $scope.keyboardListener );                
+                angular.element( $scope.attachKeyboardListenerToElement ? element : document ).off( 'keydown', $scope.keyboardListener );                
                 
                 // close callback                
                 $timeout( function() {
