@@ -3,13 +3,13 @@
  * Creates a dropdown-like button with checkboxes. 
  *
  * Project started on: Tue, 14 Jan 2014 - 5:18:02 PM
- * Current version: 4.0.0
+ * Current version: 4.1.0
  * 
  * Released under the MIT License
  * --------------------------------------------------------------------------------
  * The MIT License (MIT)
  *
- * Copyright (c) 2014 Ignatius Steven (https://github.com/isteven)
+ * Copyright (c) 2018 Marc Khoury (https://github.com/koganei)
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy 
  * of this software and associated documentation files (the "Software"), to deal 
