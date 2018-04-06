@@ -539,24 +539,24 @@ angular.module( 'isteven-multi-select', ['ng'] ).directive( 'istevenMultiSelect'
                     }
 
                     if (typeof $scope.getOutputLabel === 'function') {
-											$scope.varButtonLabel = $scope.getOutputLabel($scope.outputModel.length);
-										} else {
-											angular.forEach( $scope.inputModel, function( value, key ) {
-												if ( typeof value !== 'undefined' && value[ attrs.tickProperty ] === true ) {
-													if ( ctr < tempMaxLabels ) {
-														$scope.varButtonLabel += ( $scope.varButtonLabel.length > 0 ? '</div>, <div class="buttonLabel">' : '<div class="buttonLabel">') + $scope.writeLabel( value, 'buttonLabel' );
-													}
-													ctr++;
-												}
-											});
+                        $scope.varButtonLabel = $scope.getOutputLabel($scope.outputModel.length);
+                        } else {
+                            angular.forEach( $scope.inputModel, function( value, key ) {
+                                if ( typeof value !== 'undefined' && value[ attrs.tickProperty ] === true ) {
+                                    if ( ctr < tempMaxLabels ) {
+                                        $scope.varButtonLabel += ( $scope.varButtonLabel.length > 0 ? '</div>, <div class="buttonLabel">' : '<div class="buttonLabel">') + $scope.writeLabel( value, 'buttonLabel' );
+                                    }
+                                    ctr++;
+                                }
+                            });
 
-											if ( $scope.more === true ) {
-												// https://github.com/isteven/angular-multi-select/pull/16
-												if (tempMaxLabels > 0) {
-													$scope.varButtonLabel += ', ... ';
-												}
-												$scope.varButtonLabel += '(' + $scope.outputModel.length + ')';
-											}
+                            if ( $scope.more === true ) {
+                                // https://github.com/isteven/angular-multi-select/pull/16
+                                if (tempMaxLabels > 0) {
+                                    $scope.varButtonLabel += ', ... ';
+                                }
+                                $scope.varButtonLabel += '(' + $scope.outputModel.length + ')';
+                            }
                     }
                 }
                 $scope.varButtonLabel = $sce.trustAsHtml( $scope.varButtonLabel + '<span class="caret"></span>' );                
