@@ -1,11 +1,8 @@
 {
     "name": "isteven-angular-multiselect-koganei",
-    "version": "v4.1.0",
+    "version": "v4.1.2",
     "description": "A multi select dropdown directive for AngularJS",
-    "main": [
-        "isteven-multi-select.js",
-        "isteven-multi-select.css"
-    ],
+    "main": "isteven-multi-select.js",
     "repository": {
         "type": "git",
         "url": "https://github.com/koganei/angular-multi-select.git"
