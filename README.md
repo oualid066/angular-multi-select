@@ -29,7 +29,7 @@ Released under the MIT license:
 
 The MIT License (MIT)
 
-Original Project (https://github.com/isteven/angular-multi-select): Copyright (c) 2014-2015 Ignatius Steven (https://github.com/isteven)
+Original Project (https://github.com/isteven/angular-multi-select): Copyright (c) 2014-2015 Ignatius Steven (https://github.com/isteven)  
 Forked Project (https://github.com/koganei/angular-multi-select): Copyright (c) 2018 Marc Khoury (https://github.com/koganei)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
