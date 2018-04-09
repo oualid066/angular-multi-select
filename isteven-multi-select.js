@@ -547,7 +547,7 @@ angular.module( 'isteven-multi-select', ['ng'] ).directive( 'istevenMultiSelect'
                     ctr = 0;
 
                 if ($scope.getButtonLabel) {
-                    buttonLabel = $scope.getButtonLabel({outputLength: $scope.outputModel.length});
+                    buttonLabel = $scope.getButtonLabel({outputModel: $scope.outputModel});
                 } else {
                     angular.forEach( $scope.inputModel, function( value, key ) {
                         if ( typeof value !== 'undefined' && value[ attrs.tickProperty ] === true ) {
